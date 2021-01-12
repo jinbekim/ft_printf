@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/11 15:48:15 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/13 00:07:33 by jinbekim         ###   ########.fr       */
+/*   Created: 2021/01/12 03:01:38 by jinbekim          #+#    #+#             */
+/*   Updated: 2021/01/13 00:07:23 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include "./libft/libft.h"
-# include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
-int		g_nbr = 0;
-int		ft_printf(const char *arg, ...);
+int	main(void)
+{
+	int j;
+	long *c;
+	char s;
+	unsigned int p;
 
-#endif
+	j = 23400930;
+
+	printf("%d", printf("|%0%|\n"));
+}
