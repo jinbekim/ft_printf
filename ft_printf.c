@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 15:46:24 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/13 00:07:29 by jinbekim         ###   ########.fr       */
+/*   Updated: 2021/01/14 22:47:39 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,18 @@ extern int g_nbr;
 int		ft_printf(const char *arg, ...)
 {
 	va_list	ap;
+	int		i;
 
+	i = 0;
 	va_start(ap, arg);
-	while (*arg)
+	while (arg[i] == '\0')
 	{
-		if (*arg == '%')
-			form_handler(arg + 1, ap);
-		printf_c(*arg);
-		arg++;
+		if (arg[i] == '%')
+			i = flag_setter(&arg[i], ap);
+		if (arg[i] == '\0')
+			break ;
+		ft_putchar(arg[i]);
+		i++;
 	}
 	va_end(ap);
 	return (g_nbr);

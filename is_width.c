@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   is_width.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 03:01:38 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/14 21:52:10 by jinbekim         ###   ########.fr       */
+/*   Created: 2021/01/14 03:58:53 by jinbekim          #+#    #+#             */
+/*   Updated: 2021/01/14 22:43:29 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
+#include "ft_printf.h"
 
-int			main(void)
+t_bool		is_width(int arg, t_format *format)
 {
-	printf("%d\n", printf("|%10.2c|\n", 'a'));
+	if (ft_isdigit(arg))
+	{
+		format->width = (format->width * 10) + (arg - '0');
+		return (true);
+	}
+	return (false);
 }

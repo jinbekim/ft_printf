@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_p.c                                         :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 17:44:51 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/13 00:07:26 by jinbekim         ###   ########.fr       */
+/*   Created: 2021/01/13 18:49:08 by jinbekim          #+#    #+#             */
+/*   Updated: 2021/01/13 18:49:12 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		printf_p(void *ptr)
+#include "ft_printf.h"
+
+extern int g_nbr;
+
+void	ft_putchar(int arg)
 {
-	long long	hex;
-
-	hex = ptr;
-
+	write(1, &arg, 1);
+	g_nbr++;
 }

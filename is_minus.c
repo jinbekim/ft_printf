@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_di.c                                        :+:      :+:    :+:   */
+/*   isminus.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 18:47:00 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/13 00:07:31 by jinbekim         ###   ########.fr       */
+/*   Created: 2021/01/14 03:45:38 by jinbekim          #+#    #+#             */
+/*   Updated: 2021/01/14 03:49:54 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-extern int g_nbr;
-
-void	printf_di(int arg)
+t_bool		isminus(char arg, t_format *format)
 {
-
-
+	if (arg == '-')
+	{
+		format->leftalign = true;
+		format->zero = false;
+		return (true);
+	}
+	return (false);
 }

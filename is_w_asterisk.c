@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   is_w_asterisk.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 03:01:38 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/14 21:52:10 by jinbekim         ###   ########.fr       */
+/*   Created: 2021/01/14 16:17:27 by jinbekim          #+#    #+#             */
+/*   Updated: 2021/01/14 22:34:11 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
+#include "ft_printf.h"
 
-int			main(void)
+t_bool		is_w_asterisk(char arg, t_format *format, va_list ap)
 {
-	printf("%d\n", printf("|%10.2c|\n", 'a'));
+	int	width;
+
+	if (arg != '*')
+		return (false);
+	width = va_arg(ap, int);
+	if (width < 0)
+	{
+		format->leftalign = true;
+		format->width = width * -1;
+	}
+	else
+	{
+		format->width = width;
+	}
+	return (true);
 }
