@@ -110,5 +110,6 @@ char		*c_handler(t_format *flags, int arg)
 	else
 		arr[len - 1] = arg;
 	flags->len = len;
+	printf("this is whiat : %s\n", arr);
 	return (arr);
 }
