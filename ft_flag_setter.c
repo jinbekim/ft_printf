@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 04:46:44 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/20 22:21:38 by jinbekim         ###   ########.fr       */
+/*   Updated: 2021/01/20 23:10:08 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,25 +78,22 @@ static char	*ft_iswidth(char *fmt, va_list ap, t_format *flags)
 
 static char	*ft_isprec(char *fmt, va_list ap, t_format *flags)
 {
-	int	prec;
-
-	prec = 0;
 	if (*fmt == '.')
 	{
 		fmt++;
 		if (ft_isdigit(*fmt))
 		{
-			while (ft_isdigit(*fmt))
-			{
-				prec = prec * 10 + (*fmt - '0');
-				flags->prec = prec;
-				fmt++;
-			}
+			flags->prec = 0;
+			while (ft_isdigit(*fmt++))
+				flags->prec = flags->prec * 10 + (*fmt - '0');
 		}
 		else if (*fmt == '*')
 		{
 			if ((flags->prec = va_arg(ap, int)) < 0)
+			{
 				flags->fill_blank = ' ';
+				flags->prec = -1;
+			}
 			fmt++;
 		}
 		else
