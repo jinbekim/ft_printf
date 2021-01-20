@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isminus.c                                          :+:      :+:    :+:   */
+/*   persent_handler.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 03:45:38 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/14 03:49:54 by jinbekim         ###   ########.fr       */
+/*   Created: 2021/01/19 15:47:23 by jinbekim          #+#    #+#             */
+/*   Updated: 2021/01/20 02:34:14 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_bool		isminus(char arg, t_format *format)
+char	*persent_handler(t_format *flags, int arg)
 {
-	if (arg == '-')
+	char	*arr;
+	int		len;
+
+	len = flags->width > 1 ? flags->width : 1;
+	if (!(arr = malloc(len + 1)))
+		return (NULL);
+	printf("this is flag %c\n", flags->fill_blank);
+	arr[len] = '\0';
+	ft_memset(arr, ' ', len);
+	if (flags->fill_blank == '0')
 	{
-		format->leftalign = true;
-		format->zero = false;
-		return (true);
+		ft_memset(arr, '0', len);
+		arr[len - 1] = arg;
 	}
-	return (false);
+	else if (flags->fill_blank == ' ')
+		arr[0] = arg;
+	else
+		arr[len - 1] = arg;
+	return (arr);
 }

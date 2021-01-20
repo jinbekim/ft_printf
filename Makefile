@@ -6,7 +6,7 @@
 #    By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/11 15:34:42 by jinbekim          #+#    #+#              #
-#    Updated: 2021/01/14 22:40:48 by jinbekim         ###   ########.fr        #
+#    Updated: 2021/01/20 13:34:19 by jinbekim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,20 +16,18 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 SRC = $(addsuffix .c, $(FUNC))
 OBJ = $(SRC:.c=.o)
-FUNC = ft_printf flag_setter ft_putchar is_minus\
-	is_p_asterisk is_precision is_w_asterisk is_width is_zero put_char
+FUNC = ft_printf ft_handler ft_flag_setter c_handler d_handler persent_handler u_handler x_handler p_handler
 
 all : $(NAME)
 
-$(NAME) : libft $(OBJ)
-	cp ./libft/libft.a $(NAME)
-	$(AR) $@ $(OBJ)
-
-libft :
-	$(MAKE) -C $@
+$(NAME) : $(OBJ)
+	$(MAKE) -C libft
+	cp ./libft/libft.a ./libftprintf.a
+	$(AR) $@ $?
 
 bonus : $(OBJB)
-	$(AR) $(NAME) $?
+	$(MAKE) -C libft
+	$(AR) $(NAME) $?	
 
 re : fclean libft all
 
