@@ -20,7 +20,6 @@ char	*persent_handler(t_format *flags, int arg)
 	len = flags->width > 1 ? flags->width : 1;
 	if (!(arr = malloc(len + 1)))
 		return (NULL);
-	printf("this is flag %c\n", flags->fill_blank);
 	arr[len] = '\0';
 	ft_memset(arr, ' ', len);
 	if (flags->fill_blank == '0')

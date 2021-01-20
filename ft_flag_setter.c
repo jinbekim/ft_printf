@@ -96,7 +96,9 @@ static char	*ft_isprec(char *fmt, va_list ap, t_format *flags)
 		else if (*fmt == '*')
 		{
 			if ((flags->prec = va_arg(ap, int)) < 0)
-				flags->prec = 0;
+			{
+				flags->fill_blank = ' ';
+			}
 			fmt++;
 		}
 		else

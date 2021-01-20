@@ -27,7 +27,7 @@ $(NAME) : $(OBJ)
 
 bonus : $(OBJB)
 	$(MAKE) -C libft
-	$(AR) $(NAME) $?	
+	$(AR) $(NAME) $?
 
 re : fclean libft all
 
