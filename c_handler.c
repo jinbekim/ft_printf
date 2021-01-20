@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 16:35:30 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/20 22:23:58 by jinbekim         ###   ########.fr       */
+/*   Updated: 2021/01/20 23:30:15 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static char	*ft_prec_width(t_format *flags, char *arg)
 		}
 	}
 	else if (flags->prec >= (int)ft_strlen(arg))
-		arr = ft_strdup(arg);
+		arr = ft_width(flags, arg);
 	else
 	{
 		if (!(arr = malloc(flags->prec + 1)))

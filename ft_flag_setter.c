@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 04:46:44 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/20 23:10:08 by jinbekim         ###   ########.fr       */
+/*   Updated: 2021/01/20 23:15:55 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,11 @@ static char	*ft_isprec(char *fmt, va_list ap, t_format *flags)
 		if (ft_isdigit(*fmt))
 		{
 			flags->prec = 0;
-			while (ft_isdigit(*fmt++))
+			while (ft_isdigit(*fmt))
+			{
 				flags->prec = flags->prec * 10 + (*fmt - '0');
+				fmt++;
+			}
 		}
 		else if (*fmt == '*')
 		{
