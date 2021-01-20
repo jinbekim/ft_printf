@@ -48,9 +48,9 @@ char		*p_handler(t_format *flags, unsigned long arg)
 	int		len;
 
 	len = ft_hexlen(arg) + 2;
-	ptrlen = flags->width > len ? flags->width : len;
 	if (flags->width == -1 && arg == 0 && flags->prec != 0)
-		ptrlen++;
+		len++;
+	ptrlen = flags->width > len ? flags->width : len;
 	if (!(ptr = malloc(ptrlen + 1)))
 		return (NULL);
 	ptr[ptrlen] = '\0';
