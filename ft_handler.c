@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 21:56:30 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/20 22:03:22 by jinbekim         ###   ########.fr       */
+/*   Updated: 2021/01/20 22:26:07 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ static int	ft_putstr(char *str, t_format flags)
 		while (flags.len != 0)
 		{
 			count += ft_putchar(*str);
+			str++;
 			flags.len--;
 		}
 	}

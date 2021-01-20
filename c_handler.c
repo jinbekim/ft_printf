@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 16:35:30 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/20 02:48:14 by jinbekim         ###   ########.fr       */
+/*   Updated: 2021/01/20 22:23:58 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,5 @@ char		*c_handler(t_format *flags, int arg)
 	else
 		arr[len - 1] = arg;
 	flags->len = len;
-	printf("this is whiat : %s\n", arr);
 	return (arr);
 }

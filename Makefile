@@ -6,7 +6,7 @@
 #    By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/11 15:34:42 by jinbekim          #+#    #+#              #
-#    Updated: 2021/01/20 13:34:19 by jinbekim         ###   ########.fr        #
+#    Updated: 2021/01/20 22:57:46 by jinbekim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ bonus : $(OBJB)
 	$(MAKE) -C libft
 	$(AR) $(NAME) $?
 
-re : fclean libft all
+re : fclean all
 
 clean :
 	$(MAKE) clean -C libft
