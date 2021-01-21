@@ -29,6 +29,7 @@ libft :
 	$(MAKE) -C libft
 
 bonus : $(OBJ)
+  	$(MAKE) -C libft
 	cp ./libft/libft.a ./libftprintf.a
 	$(AR) $(NAME) $?
 
