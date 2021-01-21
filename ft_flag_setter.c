@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 04:46:44 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/20 23:15:55 by jinbekim         ###   ########.fr       */
+/*   Updated: 2021/01/21 19:36:56 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ static char	*ft_isprec(char *fmt, va_list ap, t_format *flags)
 		{
 			if ((flags->prec = va_arg(ap, int)) < 0)
 			{
-				flags->fill_blank = ' ';
 				flags->prec = -1;
 			}
 			fmt++;

@@ -6,7 +6,7 @@
 #    By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/11 15:34:42 by jinbekim          #+#    #+#              #
-#    Updated: 2021/01/20 23:41:51 by jinbekim         ###   ########.fr        #
+#    Updated: 2021/01/21 19:38:50 by jinbekim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ $(NAME) : $(OBJ)
 libft :
 	$(MAKE) -C libft
 
-bonus : $(OBJB) $(LIBFT)
+bonus : $(OBJ)
+	cp ./libft/libft.a ./libftprintf.a
 	$(AR) $(NAME) $?
 
 re : fclean all

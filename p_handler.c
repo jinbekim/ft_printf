@@ -6,7 +6,7 @@
 /*   By: jinbekim <jinbekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 01:36:41 by jinbekim          #+#    #+#             */
-/*   Updated: 2021/01/21 00:47:28 by jinbekim         ###   ########.fr       */
+/*   Updated: 2021/01/21 19:14:11 by jinbekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,9 @@ static int	ft_hexlen(unsigned long arg)
 {
 	int hexlen;
 
-	hexlen = 0;
-	while (arg)
-	{
+	hexlen = 1;
+	while (arg /= 16)
 		hexlen++;
-		arg /= 16;
-	}
 	return (hexlen);
 }
 
@@ -48,8 +45,8 @@ char		*p_handler(t_format *flags, unsigned long arg)
 	int		len;
 
 	len = ft_hexlen(arg) + 2;
-	if (flags->width < 3 && arg == 0 && flags->prec != 0)
-		len++;
+	if (flags->prec == 0)
+		len--;
 	ptrlen = flags->width > len ? flags->width : len;
 	if (!(ptr = malloc(ptrlen + 1)))
 		return (NULL);
